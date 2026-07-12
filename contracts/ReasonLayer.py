@@ -4,6 +4,20 @@ from datetime import datetime, timezone
 import json
 
 
+# Module-level helpers — no `self`, safe to call inside nondet closures
+def _parse_json(raw: str) -> dict:
+    cleaned = raw.replace("```json", "").replace("```", "").strip()
+    return json.loads(cleaned)
+
+
+def _score_to_tier(score: int) -> str:
+    if score < 20: return "Unverified"
+    if score < 40: return "Bronze"
+    if score < 60: return "Silver"
+    if score < 80: return "Trusted"
+    return "Elite"
+
+
 class ReasonLayer(gl.Contract):
     # ── Storage ───────────────────────────────────────────────────────────
     owner: str
@@ -51,15 +65,10 @@ class ReasonLayer(gl.Contract):
             raise Exception("Owner only")
 
     def _parse_json(self, raw: str) -> dict:
-        cleaned = raw.replace("```json", "").replace("```", "").strip()
-        return json.loads(cleaned)
+        return _parse_json(raw)
 
     def _score_to_tier(self, score: int) -> str:
-        if score < 20: return "Unverified"
-        if score < 40: return "Bronze"
-        if score < 60: return "Silver"
-        if score < 80: return "Trusted"
-        return "Elite"
+        return _score_to_tier(score)
 
     # ── View Methods ──────────────────────────────────────────────────────
 
@@ -219,9 +228,9 @@ class ReasonLayer(gl.Contract):
 
         def leader_fn():
             raw = gl.nondet.exec_prompt(prompt)
-            data = self._parse_json(raw)
+            data = _parse_json(raw)
             score = max(0, min(100, int(data.get("score", 50))))
-            tier = self._score_to_tier(score)
+            tier = _score_to_tier(score)
             conf = str(data.get("confidence", "medium")).lower()
             if conf not in ("high", "medium", "low"):
                 conf = "medium"
@@ -432,7 +441,7 @@ class ReasonLayer(gl.Contract):
                 'Keys: "verdict" ("upheld" or "rejected"), "reasoning" (2-3 sentences), "confidence" (0-100)\n'
             )
             raw = gl.nondet.exec_prompt(prompt)
-            data = self._parse_json(raw)
+            data = _parse_json(raw)
             verdict = str(data.get("verdict", "")).lower().strip()
             if verdict not in ("upheld", "rejected"):
                 raise Exception("Invalid verdict: " + verdict)
