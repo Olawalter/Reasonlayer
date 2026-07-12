@@ -280,7 +280,7 @@ The app auto-switches MetaMask to StudioNet on any write call. If your wallet is
 | Chain ID | 61999 |
 | RPC URL | https://studio.genlayer.com/api |
 | Currency Symbol | GEN |
-| Explorer | https://genlayer-explorer.vercel.app |
+| Explorer | https://explorer-studio.genlayer.com |
 
 ---
 
@@ -323,7 +323,7 @@ ReasonLayer/
 
 **Frontend:** [reasonlayer.vercel.app](https://reasonlayer.vercel.app)  
 **Contract:** `0xDa01416ef5c8A5D4865966F9670c72795307470a` on GenLayer StudioNet  
-**Explorer:** [genlayer-explorer.vercel.app](https://genlayer-explorer.vercel.app)
+**Explorer:** [genlayer-explorer.vercel.app](https://explorer-studio.genlayer.com)
 
 ---
 

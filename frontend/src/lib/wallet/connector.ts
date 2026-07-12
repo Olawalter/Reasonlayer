@@ -10,7 +10,7 @@ export const studionetChain = defineChain({
     default: { http: ["https://studio.genlayer.com/api"] },
   },
   blockExplorers: {
-    default: { name: "GenLayer Explorer", url: "https://genlayer-explorer.vercel.app" },
+    default: { name: "GenLayer Explorer", url: "https://explorer-studio.genlayer.com" },
   },
   testnet: true,
 });
