@@ -323,7 +323,7 @@ ReasonLayer/
 
 **Frontend:** [validex-app.vercel.app](https://validex-app.vercel.app)  
 **Contract:** `0xDa01416ef5c8A5D4865966F9670c72795307470a` on GenLayer StudioNet  
-**Explorer:** [genlayer-explorer.vercel.app](https://explorer-studio.genlayer.com)
+**Explorer:** [explorer-studio.genlayer.com](https://explorer-studio.genlayer.com)
 
 ---
 
