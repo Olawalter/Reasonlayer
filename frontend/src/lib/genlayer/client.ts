@@ -21,5 +21,6 @@ export function createWriteClient(address: Address) {
   return createClient({ chain: studionet, account: address });
 }
 
-export const CONTRACT_ADDRESS =
-  (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ?? "") as `0x${string}`;
+export const CONTRACT_ADDRESS = (
+  (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ?? "").replace(/^﻿/, "").trim()
+) as `0x${string}`;
