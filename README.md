@@ -194,7 +194,7 @@ The AI prompt receives all signals and reasons holistically — not through rigi
 
 **File:** `contracts/ReasonLayer.py`  
 **Network:** GenLayer StudioNet (Chain ID 61999)  
-**Address:** `0xDa01416ef5c8A5D4865966F9670c72795307470a`
+**Address:** `0x3E0d9159A8740341E489DD4AD58127FCe4F9869B`
 
 ### Write Methods
 
@@ -259,7 +259,7 @@ cp .env.local.example .env.local
 Edit `.env.local`:
 
 ```env
-NEXT_PUBLIC_CONTRACT_ADDRESS=0xDa01416ef5c8A5D4865966F9670c72795307470a
+NEXT_PUBLIC_CONTRACT_ADDRESS=0x3E0d9159A8740341E489DD4AD58127FCe4F9869B
 NEXT_PUBLIC_CHAIN_ID=61999
 NEXT_PUBLIC_RPC_URL=https://studio.genlayer.com/api
 NEXT_PUBLIC_APP_NAME=ReasonLayer
@@ -322,7 +322,7 @@ ReasonLayer/
 ## Live
 
 **Frontend:** [validex-app.vercel.app](https://validex-app.vercel.app)  
-**Contract:** `0xDa01416ef5c8A5D4865966F9670c72795307470a` on GenLayer StudioNet  
+**Contract:** `0x3E0d9159A8740341E489DD4AD58127FCe4F9869B` on GenLayer StudioNet  
 **Explorer:** [explorer-studio.genlayer.com](https://explorer-studio.genlayer.com)
 
 ---
